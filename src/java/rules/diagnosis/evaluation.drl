@@ -23,7 +23,7 @@ rule "digoxin1"
     //salience 15
     dialect "java"
     when
-        p1: Patient  (disease.equals("heart failure"), age != Age.CHILD, age != Age.ELDER,
+    p1: Patient  (disease.equals("heart failure"), age != Age.CHILD, age != Age.ELDER,
     !medicines.contains("diuretics"),!medicines.contains("corticosteroids"), !comorbidity.contains("allergic to glycosides"))
 
 then
@@ -893,4 +893,148 @@ rule "Ticagrelor6"
 then
     p1.setTreatments("Ticagrelor");
     System.out.println("Ticagrelor is the best treatment for the patient");
+end
+rule "Losartan"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("heart failure"), age != Age.CHILD, 
+    !medicines.contains("Hypersensitivity to Losartan"),!medicines.contains("medicines with aliskiren"), !comorbidity.contains("diabetes"), !comorbidity.contains("kidney malfunction"),!comorbidity.contains("severe liver failure"))
+
+then
+    p1.setTreatments("losartan");
+    System.out.println("Losartan is the best treatment for the patient");
+end
+rule "Losartan2"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("high blood pressure"), age != Age.CHILD, 
+    !medicines.contains("Hypersensitivity to Losartan"),!medicines.contains("medicines with aliskiren"), !comorbidity.contains("diabetes"), !comorbidity.contains("kidney malfunction"),!comorbidity.contains("severe liver failure"))
+
+then
+    p1.setTreatments("losartan");
+    System.out.println("Losartan is the best treatment for the patient");
+end
+rule "Olmeosartan"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("high blood pressure"), age != Age.CHILD, 
+    !medicines.contains("Hypersensitivity to Olmesartan"),!medicines.contains("medicines with aliskiren"), !comorbidity.contains("diabetes"), !comorbidity.contains("kidney malfunction"),!comorbidity.contains("jaundice"),!comorbidity.contains("biliary obstruction"))
+
+then
+    p1.setTreatments("Olmeosartan");
+    System.out.println("Olmeosartan is the best treatment for the patient");
+end
+rule "Olmeosartan2"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("heart failure"), age != Age.CHILD, 
+    !medicines.contains("Hypersensitivity to Olmesartan"),!medicines.contains("medicines with aliskiren"), !comorbidity.contains("diabetes"), !comorbidity.contains("kidney malfunction"),!comorbidity.contains("jaundice"),!comorbidity.contains("biliary obstruction"))
+
+then
+    p1.setTreatments("Olmeosartan");
+    System.out.println("Olmeosartan is the best treatment for the patient");
+end
+rule "Telmisartan"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("heart failure"), age != Age.CHILD, age != Age.YOUNG,
+    !medicines.contains("angiotensin converting enzyme (ACE) inhibitor"),!medicines.contains("medicines with aliskiren"), !comorbidity.contains("diabetes"), !comorbidity.contains("kidney malfunction"),!comorbidity.contains("liver disease"))
+
+then
+    p1.setTreatments("Telmisartan");
+    System.out.println("Telmisartan is the best treatment for the patient");
+end
+rule "Telmisartan2"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("high blood pressure"), age != Age.CHILD, age != Age.YOUNG,
+    !medicines.contains("angiotensin converting enzyme (ACE) inhibitor"),!medicines.contains("medicines with aliskiren"), !comorbidity.contains("diabetes"), !comorbidity.contains("kidney malfunction"),!comorbidity.contains("liver disease"))
+
+then
+    p1.setTreatments("Telmisartan");
+    System.out.println("Telmisartan is the best treatment for the patient");
+end
+rule "Valsartan"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("heart failure"), age != Age.CHILD,
+    !medicines.contains("Hypersensitivity to simvastatin"),!medicines.contains("medicines with aliskiren"), !comorbidity.contains("diabetes"), !comorbidity.contains("kidney malfunction"),!comorbidity.contains("liver disease"))
+
+then
+    p1.setTreatments("Valsartan");
+    System.out.println("Valsartan is the best treatment for the patient");
+end
+rule "Valsartan2"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("high blood pressure"), age != Age.CHILD,
+    !medicines.contains("Hypersensitivity to simvastatin"),!medicines.contains("medicines with aliskiren"), !comorbidity.contains("diabetes"), !comorbidity.contains("kidney malfunction"),!comorbidity.contains("liver disease"))
+
+then
+    p1.setTreatments("Valsartan");
+    System.out.println("Valsartan is the best treatment for the patient");
+end
+rule "Apixaban"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("clots"), age != Age.CHILD, age != Age.YOUNG,age != Age.ELDER,
+    !medicines.contains("Hypersensitivity to apixaban"),!medicines.contains("medicines to prevent blood clotting"), !comorbidity.contains("bleed excessively"), !comorbidity.contains("disease in a body organ"),!comorbidity.contains("recent/active ulcer"),!comorbidity.contains("recent brain bleed"),!comorbidity.contains("liver disease"))
+
+then
+    p1.setTreatments("Apixaban");
+    System.out.println("Apixaban is the best treatment for the patient");
+end
+rule "Dabigatran"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("clots"), age != Age.YOUNG,age != Age.ADULT,
+    !medicines.contains("Hypersensitivity to dabigatran"), !comorbidity.contains("bleeding problems "), !comorbidity.contains("stomach ulcer"),!comorbidity.contains("kidney disease"),!comorbidity.contains("heart valve replaced"))
+
+then
+    p1.setTreatments("Dabigatran");
+    System.out.println("Dabigatran is the best treatment for the patient");
+end
+rule "Edoxaban"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("clots"), age != Age.YOUNG,age != Age.CHILD,
+    !medicines.contains("Hypersensitivity to edoxaban"),!medicines.contains("amiodarone"),!medicines.contains("atorvastatin"),!medicines.contains("cyclosporine"),!medicines.contains("digoxin"),!medicines.contains("erythromycin"),!medicines.contains("esomeprazole"),!medicines.contains("ketoconazole"),!medicines.contains("quinidine"),!medicines.contains("rifampin"),!medicines.contains("amiodarone "),!medicines.contains("escitalopram"),!medicines.contains("fluoxetine"),!medicines.contains("fluvoxamine"),
+    !medicines.contains("paroxetine"),!medicines.contains("sertraline"),!medicines.contains("serotonin-norepinephrine reuptake inhibitors (SNRIs)"),!medicines.contains("duloxetine"),!medicines.contains("levomilnacipran"),!medicines.contains("milnacipran"),!medicines.contains("venlafaxine"),!medicines.contains("verapamil "), !comorbidity.contains("heavy bleeding"), !comorbidity.contains("mechanical heart valve"),!comorbidity.contains("stomach cancer"),!comorbidity.contains("liver disease"),!comorbidity.contains("antiphospholipid syndrome"))
+
+then
+    p1.setTreatments("Edoxaban");
+    System.out.println("Edoxaban is the best treatment for the patient");
+end
+rule "Heparin"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("clots"), age != Age.YOUNG,age != Age.CHILD,
+    !medicines.contains("Hypersensitivity to heparin"),!medicines.contains("allergic to beef or pork"),!comorbidity.contains("low platelets"), !comorbidity.contains("heart attack"),!comorbidity.contains("hemophilia"),!comorbidity.contains("cancer"))
+
+then
+    p1.setTreatments("Heparin");
+    System.out.println("Heparin is the best treatment for the patient");
+end
+rule "Rivaroxaban"
+    //salience 15
+    dialect "java"
+    when
+    p1: Patient  (disease.equals("clots"), age != Age.YOUNG,age != Age.CHILD,
+    !medicines.contains("Hypersensitivity to rivaroxaban"),!medicines.contains("warfarin"),!medicines.contains("dabigatran"),!medicines.contains("apixaban"),!medicines.contains(" heparin"),!comorbidity.contains("bleed excessively"), !comorbidity.contains("liver disease"))
+
+then
+    p1.setTreatments("Rivaroxaban");
+    System.out.println("Rivaroxaban is the best treatment for the patient");
 end
