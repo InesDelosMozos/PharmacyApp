@@ -30,3 +30,369 @@ then
     p1.setTreatments("digoxin");
     System.out.println("Digoxin is the best treatment for the patient");
 end
+rule "digoxin2"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("diuretics"), !comorbidity.contains("Stokes-Adams"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin3"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("diuretics"), !comorbidity.contains("cardiac glycoside intoxication"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin4"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("antidepressants"), !comorbidity.contains("allergic to glycosides"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin5"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("antidepressants"), !comorbidity.contains("Stokes-Adams"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin6"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("antidepressants"), !comorbidity.contains("cardiac glycoside intoxication"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin7"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("corticosteroids"), !comorbidity.contains("allergic to glycosides"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin8"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("corticosteroids"), !comorbidity.contains("Stokes-Adams"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin9"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("corticosteroids"), !comorbidity.contains("cardiac glycoside intoxication"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin10"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("carbenoxolone"), !comorbidity.contains("allergic to glycosides"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin11"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("carbenoxolone"), !comorbidity.contains("Stokes-Adams"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin12"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("heart failure"), age != Age.CHILD,
+!medicines.contains("carbenoxolone"), !comorbidity.contains("cardiac glycoside intoxication"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin13"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("diuretics"), !comorbidity.contains("allergic to glycosides"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+
+rule "digoxin14"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("diuretics"), !comorbidity.contains("Stokes-Adams"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin15"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("diuretics"), !comorbidity.contains("cardiac glycoside intoxication"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin16"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("antidepressants"), !comorbidity.contains("allergic to glycosides"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin17"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("antidepressants"), !comorbidity.contains("Stokes-Adams"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin18"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("antidepressants"), !comorbidity.contains("cardiac glycoside intoxication"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin19"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("corticosteroids"), !comorbidity.contains("allergic to glycosides"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin20"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("corticosteroids"), !comorbidity.contains("Stokes-Adams"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin21"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("corticosteroids"), !comorbidity.contains("cardiac glycoside intoxication"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin22"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("carbenoxolone"), !comorbidity.contains("allergic to glycosides"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin23"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("carbenoxolone"), !comorbidity.contains("Stokes-Adams"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
+
+
+
+rule "digoxin24"
+//salience 15
+dialect "java"
+when
+p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
+!medicines.contains("carbenoxolone"), !comorbidity.contains("cardiac glycoside intoxication"))
+
+
+
+then
+p1.setTreatments("digoxin");
+System.out.println("Digoxin is the best treatment for the patient");
+end
