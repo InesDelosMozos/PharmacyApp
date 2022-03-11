@@ -23,8 +23,8 @@ rule "digoxin1"
     //salience 15
     dialect "java"
     when
-        p1: Patient  (disease.equals("heart failure"), age != Age.CHILD,
-    !medicines.contains("diuretics"), !comorbidity.contains("allergic to glycosides"))
+        p1: Patient  (disease.equals("heart failure"), age != Age.CHILD, age != Age.ELDER,
+    !medicines.contains("diuretics"),!medicines.contains("corticosteroids"), !comorbidity.contains("allergic to glycosides"))
 
 then
     p1.setTreatments("digoxin");
@@ -395,4 +395,502 @@ p1: Patient (disease.equals("arrythmia"), age != Age.CHILD,
 then
 p1.setTreatments("digoxin");
 System.out.println("Digoxin is the best treatment for the patient");
+end
+rule "aspirine1"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.CHILD,
+        pregnant == false, !medicines.contains("tto. with methotrexate"), 
+        !comorbidity.contains("acute gastroduodenal ulcer"))
+
+then
+    p1.setTreatments("aspirine");
+    System.out.println("Aspirine is the best treatment for the patient");
+end
+
+
+rule "aspirine2"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.CHILD,
+        pregnant ==  false, !medicines.contains("tto. with methotrexate"), 
+        !comorbidity.contains("asma"))
+
+then
+    p1.setTreatments("aspirine");
+    System.out.println("Aspirine is the best treatment for the patient");
+end
+
+
+rule "aspirine3"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.CHILD,
+        pregnant ==  false, !medicines.contains("tto. with methotrexate"), 
+        !comorbidity.contains("mastocytosis"))
+
+then
+    p1.setTreatments("aspirine");
+    System.out.println("Aspirine is the best treatment for the patient");
+end
+
+
+rule "aspirine4"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.CHILD,
+        pregnant ==  false, !medicines.contains("tto. with methotrexate"), 
+        !comorbidity.contains("coagulation disorders"))
+
+then
+    p1.setTreatments("aspirine");
+    System.out.println("Aspirine is the best treatment for the patient");
+end
+
+rule "clopidrogel"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), 
+        !medicines.contains("hypersensitivity to clopidrogel"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("clopidrogel");
+    System.out.println("Clopidrogel is the best treatment for the patient");
+end
+
+rule "clopidrogel2"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), 
+        !medicines.contains("hypersensitivity to clopidrogel"), 
+        !comorbidity.contains("Active pathologic bleeding"))
+
+then
+    p1.setTreatments("clopidrogel");
+    System.out.println("Clopidrogel is the best treatment for the patient");
+end
+
+
+
+rule "Prasugre7"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant ==  false, !medicines.contains("hereditary fructose intolerance"), 
+        !comorbidity.contains("Active pathologic bleeding"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre8"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant ==  false, !medicines.contains("sucrase-isomaltase insufficiency"), 
+        !comorbidity.contains("Active pathologic bleeding"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre9"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant ==  false, !medicines.contains("hypersensitivity acetylsalicylic acid"), 
+        !comorbidity.contains("stroke"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel10"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant ==  false, !medicines.contains("Hypersensitivity to Prasugrel Virfuton"), 
+        !comorbidity.contains("stroke"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel11"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant ==  false, !medicines.contains("hereditary galactose intolerance"), 
+        !comorbidity.contains("stroke"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel12"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant ==  false, !medicines.contains("total lactase deficiency"), 
+        !comorbidity.contains("stroke"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel13"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("glucose absorption problems"), 
+        !comorbidity.contains("stroke"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre14"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("galactose absorption problems"), 
+        !comorbidity.contains("stroke"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre15"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("hereditary fructose intolerance"), 
+        !comorbidity.contains("stroke"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre16"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("sucrase-isomaltase insufficiency"), 
+        !comorbidity.contains("stroke"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel17"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("hypersensitivity acetylsalicylic acid"), 
+        !comorbidity.contains("transient ischemic attack"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel18"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("Hypersensitivity to Prasugrel Virfuton"), 
+        !comorbidity.contains("transient ischemic attack"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel19"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("hereditary galactose intolerance"), 
+        !comorbidity.contains("transient ischemic attack"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel20"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("total lactase deficiency"), 
+        !comorbidity.contains("transient ischemic attack"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel21"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("glucose absorption problems"), 
+        !comorbidity.contains("transient ischemic attack"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre22"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("galactose absorption problems"), 
+        !comorbidity.contains("transient ischemic attack"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre23"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("hereditary fructose intolerance"), 
+        !comorbidity.contains("transient ischemic attack"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre24"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("sucrase-isomaltase insufficiency"), 
+        !comorbidity.contains("transient ischemic attack"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre25"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("hypersensitivity acetylsalicylic acid"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel26"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("Hypersensitivity to Prasugrel Virfuton"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel27"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("hereditary galactose intolerance"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel28"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("total lactase deficiency"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugrel29"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("glucose absorption problems"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre30"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("galactose absorption problems"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre31"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("hereditary fructose intolerance"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Prasugre32"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"), age != Age.ELDER,
+        pregnant == false, !medicines.contains("sucrase-isomaltase insufficiency"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Prasugrel");
+    System.out.println("Prasugrel is the best treatment for the patient");
+end
+
+rule "Ticagrelor"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"),
+        pregnant == false, !medicines.contains("Hypersensitivity to ticagrelor"), 
+        !comorbidity.contains("active pathologic bleeding"))
+
+then
+    p1.setTreatments("Ticagrelor");
+    System.out.println("Ticagrelor is the best treatment for the patient");
+end
+
+rule "Ticagrelor2"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"),
+        pregnant == false, !medicines.contains("strong CYP3A4 inhibitors"), 
+        !comorbidity.contains("active pathologic bleeding"))
+
+then
+    p1.setTreatments("Ticagrelor");
+    System.out.println("Ticagrelor is the best treatment for the patient");
+end
+
+rule "Ticagrelor3"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"),
+        pregnant == false, !medicines.contains("Hypersensitivity to ticagrelor"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Ticagrelor");
+    System.out.println("Ticagrelor is the best treatment for the patient");
+end
+
+rule "Ticagrelor4"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"),
+        pregnant == false, !medicines.contains("strong CYP3A4 inhibitors"), 
+        !comorbidity.contains("Severe liver failure"))
+
+then
+    p1.setTreatments("Ticagrelor");
+    System.out.println("Ticagrelor is the best treatment for the patient");
+end
+
+rule "Ticagrelor5"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"),
+        pregnant == false, !medicines.contains("Hypersensitivity to ticagrelor"), 
+        !comorbidity.contains("intracranial hemorrhage"))
+
+then
+    p1.setTreatments("Ticagrelor");
+    System.out.println("Ticagrelor is the best treatment for the patient");
+end
+
+rule "Ticagrelor6"
+    //salience 15
+    dialect "java"
+    when
+        p1: Patient  (disease.equals("myocardial infarction"),
+        pregnant == false, !medicines.contains("strong CYP3A4 inhibitors"), 
+        !comorbidity.contains("intracranial hemorrhage"))
+
+then
+    p1.setTreatments("Ticagrelor");
+    System.out.println("Ticagrelor is the best treatment for the patient");
 end
